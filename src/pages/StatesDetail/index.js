@@ -72,11 +72,11 @@ export default function StatesDetail({ navigation, route }) {
                     console.log('event: ', event)
                 }}
                 injectedJavaScript={`
-                var element1 = document.getElementsByClassName('header-container')[0];
+                var element1 = document.getElementsByClassName('mqxVAc')[0];
                 var element2 = document.getElementsByClassName('banner-container')[0];
                 element1.style.display = 'none';
                 element2.style.display = 'none';
-                `} source={{ uri: 'https://id.wikipedia.org/wiki/' + item.State }} style={{ flex: 1 }} />
+                `} source={{ uri: `https://www.google.com/maps/place/${item.State},+Amerika+Serikat/` }} style={{ flex: 1 }} />
 
         </SafeAreaView>
     )
