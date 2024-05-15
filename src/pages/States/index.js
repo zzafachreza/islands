@@ -21,8 +21,8 @@ export default function States({ navigation, route }) {
         setLoading(true);
         axios.get('https://datausa.io/api/data?drilldowns=State&measures=Population&year=latest').then(res => {
             console.log(res.data.data);
-            setData(res.data.data);
-            setTMP(res.data.data)
+            setData(res.data.data.slice(0, -1));
+            setTMP(res.data.data.slice(0, -1))
         }).finally(() => {
             setLoading(false)
         })
@@ -50,6 +50,12 @@ export default function States({ navigation, route }) {
                     // borderWidth: 1,
                     padding: 10,
                 }}>
+                    <Image source={{
+                        uri: `https://okeadmin.com/flags/${item.State}.jpg`
+                    }} style={{
+                        width: '100%',
+                        height: 200,
+                    }} />
 
                     <Text style={{
                         fontFamily: fonts.secondary[800],
@@ -67,7 +73,7 @@ export default function States({ navigation, route }) {
                         }}>Population</Text>
                         <Text style={{
                             fontFamily: fonts.secondary[800],
-                            color: colors.black,
+                            color: colors.secondary,
                             fontSize: 16
                         }}>{new Intl.NumberFormat().format(item.Population)}</Text>
                     </View>
@@ -82,7 +88,7 @@ export default function States({ navigation, route }) {
                         }}>Year</Text>
                         <Text style={{
                             fontFamily: fonts.secondary[800],
-                            color: colors.success,
+                            color: colors.black,
                             fontSize: 16
                         }}>{item.Year}</Text>
                     </View>

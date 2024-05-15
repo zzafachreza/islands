@@ -66,7 +66,9 @@ export default function Splash({ navigation }) {
             source={require('../../assets/icon.png')}
             style={{
               width: 250,
+              resizeMode: 'contain',
               height: 250,
+
               marginBottom: 10,
             }}
           />

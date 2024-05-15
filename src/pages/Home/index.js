@@ -66,6 +66,7 @@ export default function Home({ navigation }) {
           <Image source={require('../../assets/icon.png')} style={{
             width: 250,
             height: 250,
+            resizeMode: 'contain',
             alignItems: 'center',
             alignSelf: "center",
 
@@ -102,9 +103,9 @@ export default function Home({ navigation }) {
               height: '75%'
             }} />
             <Text style={{
-              fontFamily: fonts.secondary[600],
+              fontFamily: fonts.secondary[800],
               fontSize: 20,
-              color: colors.black
+              color: colors.secondary
             }}>States</Text>
           </TouchableOpacity>
         </View>
